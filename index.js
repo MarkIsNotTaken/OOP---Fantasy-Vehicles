@@ -20,15 +20,20 @@ class Vehicle {
 	get vehicleDetails(){
 		return "My ride is a " + this.color + " " + this.type + ", made by " + this.make + ".";
 	}
+
 }
 
 class SuperCar extends Vehicle {
 	constructor(make, color, type, topSpeed, cost){
-		this.make = make;
-		this.color = color;
-		this.type = type;
+		super();
 		this.topSpeed = topSpeed;
 		this.cost = cost;
+	}
+
+
+
+	get superCarDetails(){
+
 	}
 
 }
