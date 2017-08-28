@@ -5,35 +5,28 @@ class Vehicle {
 		this._type = type;
 	}
 
-	set vehicleColor(color) {
-		this._color = "black";
-	}
-
-	set vehicleMake(make) {
-		this._make = "Toyota";
-	}
-
-	set vehicleType(type) {
-		this._type = "truck";
-	}
-
 	get vehicleDetails(){
-		return "My ride is a " + this.color + " " + this.type + ", made by " + this.make + ".";
+		return "My ride is a " + this._color + " " + this._type + ", made by " + this._make;
 	}
 
+	set vehicleColor(color) {
+		if(typeof color === "string"){
+			this._color = color;
+		}else{
+			throw new TypeError('That is not a string')
+		}
+	}
 }
 
 class SuperCar extends Vehicle {
 	constructor(make, color, type, topSpeed, cost){
-		super();
-		this.topSpeed = topSpeed;
-		this.cost = cost;
+		super(make, color, type);
+		this._topSpeed = topSpeed;
+		this._cost = cost;
 	}
 
-
-
 	get superCarDetails(){
-
+		return "".concat(this.vehicleDetails(), " with a top speed of " + this._topSpeed + " and a cost of " + this._cost);
 	}
 
 }
@@ -41,10 +34,13 @@ class SuperCar extends Vehicle {
 
 class Motorcycle extends Vehicle {
 	constructor(make, color, type, topSpeed, cost){
+		super();
 
 	}
 }
 
-let details = new Vehicle();
 
-console.log(details.vehicleDetails);
+let newVehicle = new Vehicle();
+let newSuperCar = new SuperCar();
+
+console.log(newSuperCar.superCarDetails);
