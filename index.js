@@ -33,7 +33,7 @@ class SuperCar extends Vehicle {
 		if(typeof cost === "string"){
 			this._cost = cost;
 		}else{
-			throw new TypeError('SuperCar.cost is not a string')
+			throw new TypeError('SuperCar.cost is not a string');
 		}
 	}
 
@@ -48,7 +48,7 @@ class Motorcycle extends Vehicle {
 	}
 
 	get bikeDetails(){
-		return "My bike is a " + this._color + " " + this._type + ", made by " + this._make + " with a top speed of " + this._topSpeed + " and a cost of " + this._cost
+		return "My bike is a " + this._color + " " + this._type + ", made by " + this._make + " with a top speed of " + this._topSpeed + " and a cost of " + this._cost;
 	}
 
 	set bikeSpeed(topSpeed){
