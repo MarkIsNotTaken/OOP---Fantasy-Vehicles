@@ -33,7 +33,7 @@ class SuperCar extends Vehicle {
 		if(typeof cost === "string"){
 			this._cost = cost;
 		}else{
-			throw new TypeError('SuperCar.cost is not a string');
+			throw new TypeError('SuperCar.cost is not a string'); // Alex was here ;)
 		}
 	}
 
